@@ -32,6 +32,8 @@ static NSString * const reuseIdentifier = @"CharacterCell";
     [self loadMarvelData];
 }
 
+#pragma mark <API>
+
 - (NSString *)hashFromStrings:(NSArray *)strings
 {
     NSMutableString *stringToHash = [NSMutableString string];
@@ -53,11 +55,12 @@ static NSString * const reuseIdentifier = @"CharacterCell";
     return hashedString;
 }
 
+
 - (void)loadMarvelData {
     NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
     NSString *ts = [NSString stringWithFormat:@"%f", timeStamp];
     NSString *hash = [self hashFromStrings:@[ts, privateKey, publicKey]];
-    NSString *URLString = [NSString stringWithFormat:@"https://gateway.marvel.com:443/v1/public/characters?apikey=%@&ts=%@&hash=%@",publicKey,ts,hash];
+    NSString *URLString = [NSString stringWithFormat:@"https://gateway.marvel.com:443/v1/public/characters?limit=100&apikey=%@&ts=%@&hash=%@",publicKey,ts,hash];
     NSURLSession *session = [NSURLSession sharedSession];
     NSURL *url = [NSURL URLWithString:URLString];
     
@@ -76,6 +79,7 @@ static NSString * const reuseIdentifier = @"CharacterCell";
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
+            NSLog(@"All done!");
         });
         
     }];
@@ -96,20 +100,19 @@ static NSString * const reuseIdentifier = @"CharacterCell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+    return [self.characters count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
+    
     
     return cell;
 }

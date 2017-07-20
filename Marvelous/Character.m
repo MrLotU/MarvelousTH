@@ -22,7 +22,6 @@
         character.series = [dictionary valueForKey:@"series"];
         character.thumbnail = [dictionary valueForKey:@"thumbnail"];
     }
-    NSLog(@"%@", character);
     return character;
 }
 
