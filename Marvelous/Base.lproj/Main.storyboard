@@ -38,23 +38,20 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comics: 123" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uz1-AK-EFt">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comics: 123" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uz1-AK-EFt">
                                             <rect key="frame" x="30" y="43" width="95" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Series/Movies: 123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5g-KM-hr1">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Series/Movies: 123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5g-KM-hr1">
                                             <rect key="frame" x="5" y="67" width="145" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stories: 123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7B5-Ru-CMz">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stories: 123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7B5-Ru-CMz">
                                             <rect key="frame" x="32" y="92" width="91" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -63,7 +60,13 @@
                                 </view>
                                 <constraints>
                                     <constraint firstItem="JKO-XZ-X8a" firstAttribute="top" secondItem="cma-SY-t6T" secondAttribute="topMargin" constant="12" id="4me-WB-0lb"/>
+                                    <constraint firstItem="uz1-AK-EFt" firstAttribute="centerX" secondItem="cma-SY-t6T" secondAttribute="centerX" id="98b-fj-xUL"/>
+                                    <constraint firstItem="q5g-KM-hr1" firstAttribute="top" secondItem="uz1-AK-EFt" secondAttribute="bottom" constant="3" id="LpF-xl-PIb"/>
+                                    <constraint firstItem="7B5-Ru-CMz" firstAttribute="centerX" secondItem="cma-SY-t6T" secondAttribute="centerX" id="VL4-Ld-DUd"/>
+                                    <constraint firstItem="7B5-Ru-CMz" firstAttribute="top" secondItem="q5g-KM-hr1" secondAttribute="bottom" constant="4" id="YaQ-Rz-UbY"/>
+                                    <constraint firstItem="q5g-KM-hr1" firstAttribute="centerX" secondItem="cma-SY-t6T" secondAttribute="centerX" id="aeQ-tH-4yO"/>
                                     <constraint firstItem="JKO-XZ-X8a" firstAttribute="centerX" secondItem="cma-SY-t6T" secondAttribute="centerX" id="beY-dP-6bj"/>
+                                    <constraint firstItem="uz1-AK-EFt" firstAttribute="top" secondItem="JKO-XZ-X8a" secondAttribute="bottom" constant="2" id="ncF-0k-g2P"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="comicsLabel" destination="uz1-AK-EFt" id="jYa-so-a2Z"/>

@@ -15,6 +15,7 @@
 		083B91001F1F78D2001A396C /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 083B90FF1F1F78D2001A396C /* Character.m */; };
 		083B91031F1F7D7B001A396C /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 083B91021F1F7D7B001A396C /* CollectionViewController.m */; };
 		08A6020E1F20D8B800AE6C34 /* CharacterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A6020D1F20D8B800AE6C34 /* CharacterCollectionViewCell.m */; };
+		08DEF1DB1F20E8CC00D7E4A4 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DEF1DA1F20E8CC00D7E4A4 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		083B91021F1F7D7B001A396C /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		08A6020C1F20D8B800AE6C34 /* CharacterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterCollectionViewCell.h; sourceTree = "<group>"; };
 		08A6020D1F20D8B800AE6C34 /* CharacterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterCollectionViewCell.m; sourceTree = "<group>"; };
+		08DEF1D91F20E8CC00D7E4A4 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		08DEF1DA1F20E8CC00D7E4A4 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +67,14 @@
 		081EB1E01F1F443600B744EC /* Marvelous */ = {
 			isa = PBXGroup;
 			children = (
-				081EB1E41F1F443600B744EC /* AppDelegate.h */,
-				081EB1E51F1F443600B744EC /* AppDelegate.m */,
+				08DEF1DD1F20E92500D7E4A4 /* UI Things */,
+				08DEF1DC1F20E90F00D7E4A4 /* Helper files */,
 				083B91011F1F7D7B001A396C /* CollectionViewController.h */,
 				083B91021F1F7D7B001A396C /* CollectionViewController.m */,
-				083B90FE1F1F78D2001A396C /* Character.h */,
-				083B90FF1F1F78D2001A396C /* Character.m */,
 				08A6020C1F20D8B800AE6C34 /* CharacterCollectionViewCell.h */,
 				08A6020D1F20D8B800AE6C34 /* CharacterCollectionViewCell.m */,
-				081EB1EA1F1F443600B744EC /* Main.storyboard */,
-				081EB1ED1F1F443600B744EC /* Assets.xcassets */,
-				081EB1EF1F1F443600B744EC /* LaunchScreen.storyboard */,
-				081EB1F21F1F443600B744EC /* Info.plist */,
-				081EB1E11F1F443600B744EC /* Supporting Files */,
+				08DEF1D91F20E8CC00D7E4A4 /* DetailViewController.h */,
+				08DEF1DA1F20E8CC00D7E4A4 /* DetailViewController.m */,
 			);
 			path = Marvelous;
 			sourceTree = "<group>";
@@ -87,6 +85,29 @@
 				081EB1E21F1F443600B744EC /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		08DEF1DC1F20E90F00D7E4A4 /* Helper files */ = {
+			isa = PBXGroup;
+			children = (
+				081EB1E41F1F443600B744EC /* AppDelegate.h */,
+				081EB1E51F1F443600B744EC /* AppDelegate.m */,
+				083B90FE1F1F78D2001A396C /* Character.h */,
+				083B90FF1F1F78D2001A396C /* Character.m */,
+				081EB1F21F1F443600B744EC /* Info.plist */,
+				081EB1E11F1F443600B744EC /* Supporting Files */,
+			);
+			name = "Helper files";
+			sourceTree = "<group>";
+		};
+		08DEF1DD1F20E92500D7E4A4 /* UI Things */ = {
+			isa = PBXGroup;
+			children = (
+				081EB1EA1F1F443600B744EC /* Main.storyboard */,
+				081EB1ED1F1F443600B744EC /* Assets.xcassets */,
+				081EB1EF1F1F443600B744EC /* LaunchScreen.storyboard */,
+			);
+			name = "UI Things";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +187,7 @@
 				083B91031F1F7D7B001A396C /* CollectionViewController.m in Sources */,
 				08A6020E1F20D8B800AE6C34 /* CharacterCollectionViewCell.m in Sources */,
 				083B91001F1F78D2001A396C /* Character.m in Sources */,
+				08DEF1DB1F20E8CC00D7E4A4 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
