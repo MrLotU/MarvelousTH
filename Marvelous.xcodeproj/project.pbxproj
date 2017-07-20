@@ -70,13 +70,13 @@
 				083B91021F1F7D7B001A396C /* CollectionViewController.m */,
 				083B90FE1F1F78D2001A396C /* Character.h */,
 				083B90FF1F1F78D2001A396C /* Character.m */,
+				08A6020C1F20D8B800AE6C34 /* CharacterCollectionViewCell.h */,
+				08A6020D1F20D8B800AE6C34 /* CharacterCollectionViewCell.m */,
 				081EB1EA1F1F443600B744EC /* Main.storyboard */,
 				081EB1ED1F1F443600B744EC /* Assets.xcassets */,
 				081EB1EF1F1F443600B744EC /* LaunchScreen.storyboard */,
 				081EB1F21F1F443600B744EC /* Info.plist */,
 				081EB1E11F1F443600B744EC /* Supporting Files */,
-				08A6020C1F20D8B800AE6C34 /* CharacterCollectionViewCell.h */,
-				08A6020D1F20D8B800AE6C34 /* CharacterCollectionViewCell.m */,
 			);
 			path = Marvelous;
 			sourceTree = "<group>";
