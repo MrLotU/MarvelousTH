@@ -21,6 +21,7 @@
         character.comics = [dictionary valueForKey:@"comics"];
         character.series = [dictionary valueForKey:@"series"];
         character.thumbnail = [dictionary valueForKey:@"thumbnail"];
+        character.stories = [dictionary valueForKey:@"stories"];
     }
     return character;
 }

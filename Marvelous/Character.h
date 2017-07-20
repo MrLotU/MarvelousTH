@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSDictionary *comics;
 @property (nonatomic, strong) NSDictionary *series;
 @property (nonatomic, strong) NSDictionary *thumbnail;
+@property (nonatomic, strong) NSDictionary *stories;
 
 + (instancetype) CharacterWithDictionary:(NSDictionary *) dictionary;
 

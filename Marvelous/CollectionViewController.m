@@ -9,6 +9,7 @@
 #import "CollectionViewController.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "Character.h"
+#import "CharacterCollectionViewCell.h"
 
 @interface CollectionViewController ()
 @property (strong, nonatomic) NSMutableArray *characters;
@@ -20,7 +21,7 @@
 NSString *privateKey = @"ed137124f8e578748232e3247e0289d5575636d2";
 NSString *publicKey = @"2ef763cc635d971512d7b22ebebb629d";
 
-static NSString * const reuseIdentifier = @"CharacterCell";
+static NSString * const reuseIdentifier = @"characterCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -109,7 +110,12 @@ static NSString * const reuseIdentifier = @"CharacterCell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    CharacterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    Character *character = self.characters[indexPath.row];
+    cell.nameLabel.text = character.name;
+    cell.storiesLabel.text = character.stories[@"returned"];
+    cell.seriesLabel.text = character.series[@"returned"];
+    cell.comicsLabel.text = character.comics[@"returned"];
     
     // Configure the cell
     

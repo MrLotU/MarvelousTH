@@ -25,7 +25,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cma-SY-t6T">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="characterCell" id="cma-SY-t6T" customClass="CharacterCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -65,6 +65,12 @@
                                     <constraint firstItem="JKO-XZ-X8a" firstAttribute="top" secondItem="cma-SY-t6T" secondAttribute="topMargin" constant="12" id="4me-WB-0lb"/>
                                     <constraint firstItem="JKO-XZ-X8a" firstAttribute="centerX" secondItem="cma-SY-t6T" secondAttribute="centerX" id="beY-dP-6bj"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="comicsLabel" destination="uz1-AK-EFt" id="jYa-so-a2Z"/>
+                                    <outlet property="nameLabel" destination="JKO-XZ-X8a" id="vQ3-Qt-HEV"/>
+                                    <outlet property="seriesLabel" destination="q5g-KM-hr1" id="BNJ-Pu-iOf"/>
+                                    <outlet property="storiesLabel" destination="7B5-Ru-CMz" id="Qo1-Nz-los"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

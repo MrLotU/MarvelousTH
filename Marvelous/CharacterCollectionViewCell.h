@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface CharacterCollectionViewCell : UICollectionViewCell
+    @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+    @property (weak, nonatomic) IBOutlet UILabel *comicsLabel;
+    @property (weak, nonatomic) IBOutlet UILabel *seriesLabel;
+    @property (weak, nonatomic) IBOutlet UILabel *storiesLabel;
 
 @end
