@@ -52,7 +52,6 @@ static NSString * const reuseIdentifier = @"characterCell";
     for (int index = 0; index < CC_MD5_DIGEST_LENGTH; index++) {
         [hashedString appendFormat:@"%02x", buffer[index]];
     }
-    
     return hashedString;
 }
 
@@ -88,8 +87,6 @@ static NSString * const reuseIdentifier = @"characterCell";
         
     }];
     [task resume];
-    NSLog(@"I blame Adam Destine");
-    NSLog(@"%@", URLString);
 }
 
 
@@ -112,11 +109,15 @@ static NSString * const reuseIdentifier = @"characterCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.characters count];
+//    return [self.characters count];
+    return 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CharacterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    if([self.characters isEqualToArray:[NSArray array]]) {
+        return cell;
+    }
     Character *character = self.characters[indexPath.row];
     cell.nameLabel.text = character.name;
     cell.storiesLabel.text = character.stories[@"returned"];
@@ -142,7 +143,7 @@ static NSString * const reuseIdentifier = @"characterCell";
 }
 */
 
-/*
+
 // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
 	return NO;
@@ -155,6 +156,6 @@ static NSString * const reuseIdentifier = @"characterCell";
 - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
 	
 }
-*/
+
 
 @end
