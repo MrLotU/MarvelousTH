@@ -33,6 +33,7 @@
 		083B91021F1F7D7B001A396C /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		08A6020C1F20D8B800AE6C34 /* CharacterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterCollectionViewCell.h; sourceTree = "<group>"; };
 		08A6020D1F20D8B800AE6C34 /* CharacterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterCollectionViewCell.m; sourceTree = "<group>"; };
+		08C10E5C1F279F6B00DE0A8A /* Char.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Char.h; sourceTree = "<group>"; };
 		08DEF1D91F20E8CC00D7E4A4 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		08DEF1DA1F20E8CC00D7E4A4 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +96,7 @@
 				083B90FE1F1F78D2001A396C /* Character.h */,
 				083B90FF1F1F78D2001A396C /* Character.m */,
 				081EB1F21F1F443600B744EC /* Info.plist */,
+				08C10E5C1F279F6B00DE0A8A /* Char.h */,
 				081EB1E11F1F443600B744EC /* Supporting Files */,
 			);
 			name = "Helper files";

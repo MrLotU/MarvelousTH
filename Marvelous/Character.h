@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Char.h"
 
-@interface Character : NSObject
+@interface Character : NSObject <CharProtocol>
 
 @property (nonatomic, strong) NSNumber *id;
 @property (nonatomic, strong) NSString *name;

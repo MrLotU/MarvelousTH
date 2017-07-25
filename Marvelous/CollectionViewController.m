@@ -10,9 +10,10 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "Character.h"
 #import "CharacterCollectionViewCell.h"
+#import "Char.h"
 
 @interface CollectionViewController ()
-@property (strong, nonatomic) NSMutableArray *characters;
+@property (strong, nonatomic) NSMutableArray <CharProtocol> *characters;
 
 @end
 
@@ -58,7 +59,7 @@ static NSString * const reuseIdentifier = @"characterCell";
 
 - (void)loadMarvelData {
     
-    self.characters = [NSMutableArray array];
+    self.characters = (NSMutableArray<CharProtocol>*)[NSMutableArray array];
     
     NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
     NSString *ts = [NSString stringWithFormat:@"%f", timeStamp];
@@ -114,43 +115,20 @@ static NSString * const reuseIdentifier = @"characterCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CharacterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    Character *character = [self.characters objectAtIndex:indexPath.row];
-    cell.nameLabel.text = character.name;
-    cell.storiesLabel.text = [character.stories objectForKey:@"returned"];
-    cell.seriesLabel.text = [character.series objectForKey:@"returned"];
-    cell.comicsLabel.text = [character.comics objectForKey:@"returned"];
+    if([self.characters count] > indexPath.row) {
+        Character *character = [self.characters objectAtIndex:indexPath.row];
+        cell.nameLabel.text = character.name;
+        cell.storiesLabel.text = [NSString stringWithFormat:@"Stories: %@", [character.stories objectForKey:@"returned"]];
+        cell.seriesLabel.text = [NSString stringWithFormat:@"Series: %@", [character.series objectForKey:@"returned"]];
+        cell.comicsLabel.text = [NSString stringWithFormat:@"Comics: %@", [character.comics objectForKey:@"returned"]];
+    }
     
     return cell;
 }
 
 #pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"" sender:self];
 }
 
 
