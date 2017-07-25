@@ -33,7 +33,7 @@ static NSString * const reuseIdentifier = @"characterCell";
     [self loadMarvelData];
 }
 
-#pragma mark <API>
+#pragma mark API
 
 - (NSString *)hashFromStrings:(NSArray *)strings
 {
@@ -58,6 +58,9 @@ static NSString * const reuseIdentifier = @"characterCell";
 
 
 - (void)loadMarvelData {
+    
+    self.characters = [NSMutableArray array];
+    
     NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
     NSString *ts = [NSString stringWithFormat:@"%f", timeStamp];
     NSString *hash = [self hashFromStrings:@[ts, privateKey, publicKey]];
@@ -85,6 +88,8 @@ static NSString * const reuseIdentifier = @"characterCell";
         
     }];
     [task resume];
+    NSLog(@"I blame Adam Destine");
+    NSLog(@"%@", URLString);
 }
 
 
@@ -117,9 +122,6 @@ static NSString * const reuseIdentifier = @"characterCell";
     cell.storiesLabel.text = character.stories[@"returned"];
     cell.seriesLabel.text = character.series[@"returned"];
     cell.comicsLabel.text = character.comics[@"returned"];
-    
-    // Configure the cell
-    
     
     return cell;
 }
