@@ -109,20 +109,16 @@ static NSString * const reuseIdentifier = @"characterCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-//    return [self.characters count];
-    return 1;
+    return [self.characters count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CharacterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    if([self.characters isEqualToArray:[NSArray array]]) {
-        return cell;
-    }
-    Character *character = self.characters[indexPath.row];
+    Character *character = [self.characters objectAtIndex:indexPath.row];
     cell.nameLabel.text = character.name;
-    cell.storiesLabel.text = character.stories[@"returned"];
-    cell.seriesLabel.text = character.series[@"returned"];
-    cell.comicsLabel.text = character.comics[@"returned"];
+    cell.storiesLabel.text = [character.stories objectForKey:@"returned"];
+    cell.seriesLabel.text = [character.series objectForKey:@"returned"];
+    cell.comicsLabel.text = [character.comics objectForKey:@"returned"];
     
     return cell;
 }
