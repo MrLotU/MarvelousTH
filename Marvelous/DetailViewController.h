@@ -13,8 +13,8 @@
 
 @property (strong, nonatomic) Character *character;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *comicsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *seriesLabel;
-@property (weak, nonatomic) IBOutlet UILabel *storiesLabel;
+@property (weak, nonatomic) IBOutlet UITextView *comicsLabel;
+@property (weak, nonatomic) IBOutlet UITextView *seriesLabel;
+@property (weak, nonatomic) IBOutlet UITextView *storiesLabel;
 
 @end
