@@ -12,5 +12,9 @@
 @interface DetailViewController : UIViewController
 
 @property (strong, nonatomic) Character *character;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *comicsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *seriesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *storiesLabel;
 
 @end

@@ -17,12 +17,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeHappenedWithRecognizer:)];
+    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:swipeRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)swipeHappenedWithRecognizer: (UISwipeGestureRecognizer *)recognizer {
+    NSLog(@"Function called!");
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 @end
