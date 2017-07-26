@@ -11,6 +11,7 @@
 #import "Character.h"
 #import "CharacterCollectionViewCell.h"
 #import "Char.h"
+#import "DetailViewController.h"
 
 @interface CollectionViewController ()
 @property (strong, nonatomic) NSMutableArray <CharProtocol> *characters;
@@ -96,9 +97,11 @@ static NSString * const reuseIdentifier = @"characterCell";
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
+    if([segue.identifier isEqualToString:@"showDetail"]) {
+        DetailViewController *detailVC = segue.destinationViewController;
+        NSIndexPath *selectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
+        detailVC.character = [self.characters objectAtIndex:selectedIndexPath.row];
+    }
 }
 
 
@@ -116,8 +119,10 @@ static NSString * const reuseIdentifier = @"characterCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CharacterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     if([self.characters count] > indexPath.row) {
+        
         Character *character = [self.characters objectAtIndex:indexPath.row];
         cell.nameLabel.text = character.name;
+        [cell.nameLabel setAdjustsFontSizeToFitWidth:true];
         cell.storiesLabel.text = [NSString stringWithFormat:@"Stories: %@", [character.stories objectForKey:@"returned"]];
         cell.seriesLabel.text = [NSString stringWithFormat:@"Series: %@", [character.series objectForKey:@"returned"]];
         cell.comicsLabel.text = [NSString stringWithFormat:@"Comics: %@", [character.comics objectForKey:@"returned"]];
@@ -128,7 +133,7 @@ static NSString * const reuseIdentifier = @"characterCell";
 
 #pragma mark <UICollectionViewDelegate>
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"" sender:self];
+    [self performSegueWithIdentifier:@"showDetail" sender:self];
 }
 
 
